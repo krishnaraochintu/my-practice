@@ -1,6 +1,6 @@
 package com.krishna.app.sorting;
 
-import com.krishna.app.CArrayUtils;
+import com.krishna.app.test.CArrayUtils;
 
 public class Quicksort {
     //Used by Arrays.sort() for primitives

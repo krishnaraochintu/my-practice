@@ -1,6 +1,6 @@
-package com.krishna.app.leetcode;
+package com.krishna.app.lc;
 
-import com.krishna.app.CArrayUtils;
+import com.krishna.app.test.CArrayUtils;
 
 import java.util.ArrayList;
 import java.util.Arrays;

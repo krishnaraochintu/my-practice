@@ -1,5 +1,7 @@
-package com.krishna.app;
+package com.krishna.app.test;
 
+
+import com.krishna.app.linkedList.ListNode;
 
 public class LinkedListExamples {
     public static void main(String[] args) {

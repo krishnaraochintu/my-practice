@@ -1,6 +1,6 @@
 package com.krishna.app.sorting;
 
-import com.krishna.app.CArrayUtils;
+import com.krishna.app.test.CArrayUtils;
 
 public class MergeSort {
     public static void main(String[] args) {
@@ -14,41 +14,10 @@ public class MergeSort {
 
     private void mergeSort(int[] array, int start, int end) {
         if(start < end) {
-            int mid = (start + end)/2;
+            int mid = start + (end-start)/2;//l+ (r-l)/2
             mergeSort(array, start, mid);
             mergeSort(array, mid+1, end);
             mergeWithOutArrays(array, start, mid, end);
-        }
-    }
-
-    private void merge(int[] array, int start, int mid, int end) {
-        int leftArrayLength = mid - start + 1;
-        int rightArryLength = end - mid;
-        int leftArray[] = new int[leftArrayLength];
-        int righArray[] = new int[rightArryLength];
-        for(int i = 0; i < leftArrayLength; i++) {
-            leftArray[i] = array[i];
-        }
-        for(int j = 0; j < rightArryLength; j++) {
-            righArray[j] = array[mid+1+j];
-        }
-        int i=0, j=0, k=0;
-        while(i < leftArrayLength && j < rightArryLength) {
-            if(leftArray[i] <= righArray[j]) {
-                array[k] = leftArray[i];
-                i++; k++;
-            } else {
-                array[k] = righArray[j];
-                j++; k++;
-            }
-        }
-        while (i < leftArrayLength) {
-            array[k] = leftArray[i];
-            i++;k++;
-        }
-        while (j < rightArryLength) {
-            array[k] = righArray[j];
-            j++;k++;
         }
     }
 
@@ -76,4 +45,37 @@ public class MergeSort {
             array[i] = temp[i - start];
         }
     }
+
+    private void merge(int[] array, int start, int mid, int end) {
+        int leftArrayLength = mid - start + 1;
+        int rightArryLength = end - mid;
+        int leftArray[] = new int[leftArrayLength];
+        int righArray[] = new int[rightArryLength];
+        for(int i = 0; i < leftArrayLength; i++) {
+            leftArray[i] = array[i];
+        }
+        for(int j = 0; j < rightArryLength; j++) {
+            righArray[j] = array[mid+1+j];
+        }
+        int i=0, j=0, k=start;
+        while(i < leftArrayLength && j < rightArryLength) {
+            if(leftArray[i] <= righArray[j]) {
+                array[k] = leftArray[i];
+                i++; k++;
+            } else {
+                array[k] = righArray[j];
+                j++; k++;
+            }
+        }
+        while (i < leftArrayLength) {
+            array[k] = leftArray[i];
+            i++;k++;
+        }
+        while (j < rightArryLength) {
+            array[k] = righArray[j];
+            j++;k++;
+        }
+    }
+
+
 }
