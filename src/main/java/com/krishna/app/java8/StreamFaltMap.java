@@ -1,11 +1,9 @@
-package com.krishna.app.streams;
+package com.krishna.app.java8;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Arrays;
-import java.util.function.Function;
+import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class StreamFaltMap {
     public static void main(String[] args) {
