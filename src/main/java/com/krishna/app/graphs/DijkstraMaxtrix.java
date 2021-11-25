@@ -5,7 +5,7 @@ public class DijkstraMaxtrix {
 
     private void dijkstra(int[][] graph, int src) {
         int dist[] = new int[V];
-        // spt (shortest path set) contains vertices that have shortest path
+        // spt (shortest path set) contains vertices that have shorrtest distance from srcrtest distance from srctest path
         // sptSet[i] will true if vertex i is included in shortest
         // path tree or shortest distance from src to i is finalized
         Boolean sptSet[] = new Boolean[V];

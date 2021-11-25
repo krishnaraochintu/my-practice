@@ -30,18 +30,13 @@ public class DijkstraDPQ {
     }
 
     private void e_Neighbours(int u) {
-        int edgeDistance = -1;
-        int newDistance = -1;
         List<Node> nodeList = adjList.get(u);
         for(int i=0; i < nodeList.size(); i++) {
             Node node = nodeList.get(i);
             if(!visited.contains(node.node)) {
-                edgeDistance = node.cost;
-                //newDistance = dist[u] + edgeDistance;
-                dist[node.node] = Math.min(dist[node.node], (dist[u] + edgeDistance));
-                /*if(newDistance < dist[node.node]) {
-                    dist[node.node] = newDistance;
-                }*/
+                // take, A, B,C then
+                //d[B] = Math.min(d[B], d[A] + d[A,B])
+                dist[node.node] = Math.min(dist[node.node], (dist[u] + node.cost));
                 priorityQueue.add(new Node(node.node, dist[node.node]));
             }
         }

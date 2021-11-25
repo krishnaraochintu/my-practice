@@ -66,9 +66,8 @@ public class DijkstraNodeImpl {
         Node lowestDistanceNode = null;
         int lowestDistance = Integer.MAX_VALUE;
         for (Node node: unsettledNodes) {
-            int nodeDistance = node.getDistance();
-            if (nodeDistance < lowestDistance) {
-                lowestDistance = nodeDistance;
+            if (node.getDistance() < lowestDistance) {
+                lowestDistance = node.getDistance();
                 lowestDistanceNode = node;
             }
         }
@@ -77,9 +76,9 @@ public class DijkstraNodeImpl {
 
     static public class Node {
         private String name;
-        private List<Node> shortestPath = new LinkedList<>();
-        private Integer distance = Integer.MAX_VALUE;
-        private Map<Node, Integer> adjacentNodes = new HashMap<>();//<AdjNode,Distance>
+        private List<Node> shortestPath = new LinkedList<>();//list of nodes that describes the shortest path calculated from the starting node
+        private Integer distance = Integer.MAX_VALUE; //all node distances are initialized with Integer.MAX_VALUE
+        private Map<Node, Integer> adjacentNodes = new HashMap<>();//<AdjNode,Distance>,  immediate neighbors with edge length
 
         public Node(String name) {
             this.name = name;
