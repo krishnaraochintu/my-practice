@@ -1,5 +1,7 @@
 package com.krishna.app;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
@@ -22,5 +24,11 @@ public class StringTesting {
 
         // Printing the comma separated string
         System.out.println(str);
+        String appURL = "http://mars-cloud.wavemakeronline.com/pkfj9tmr0x6z/GoodAppTwo";
+        try {
+            System.out.println(new URL(appURL).getPath());
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
     }
 }
